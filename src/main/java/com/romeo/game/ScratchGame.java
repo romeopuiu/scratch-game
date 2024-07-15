@@ -6,7 +6,7 @@ public class ScratchGame {
 
         if (args.length != 2) {
             System.out.println(
-                    "Please give in the proper format like : java -jar build_scratch_game-0.0.1-jar-with-dependencies.jar config.json 100");
+                    "Please give in the proper format like : java -jar build_scratch-game-1.0-SNAPSHOT-jar-with-dependencies config.json 100");
             return;
         }
 
