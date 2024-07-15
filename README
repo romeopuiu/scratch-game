@@ -1,3 +1,5 @@
+<h2>scratch-game<h2/>
+<hr>
 Build a scratch game, that will generate a matrix (for example 3x3)
 from symbols(based on probabilities for each individual cell)
 and based on winning combinations user either will win or lost
