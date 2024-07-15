@@ -1,7 +1,5 @@
 package com.romeo.game;
 
-import java.util.List;
-import java.util.Map;
 
 public class ScratchGame {
     public static void main(String[] args) {
@@ -17,13 +15,13 @@ public class ScratchGame {
 
         LoadConfigurationFile.loadConfig(configFile);
 
-        List<List<String>> matrix = MatrixGenerator.generateRandomMatrix();
+        var matrix = MatrixGenerator.generateRandomMatrix();
 
-        Map<String, List<String>> appliedWinningCombinations = ScratchGameUtility.findAppliedWinningCombinations(matrix);
+        var appliedWinningCombinations = ScratchGameUtility.findAppliedWinningCombinations(matrix);
 
         ScratchGameUtility.calculateStandardSymbolReward(appliedWinningCombinations, bettingAmount);
 
-        List<String> appliedBonusSymbol = ScratchGameUtility.findAppliedBonusSymbols(matrix);
+        var appliedBonusSymbol = ScratchGameUtility.findAppliedBonusSymbols(matrix);
 
         System.out.println("{\n\"matrix\": " + matrix + ",");
         System.out.println("\"reward\": " + ScratchGameUtility.reward + ",");

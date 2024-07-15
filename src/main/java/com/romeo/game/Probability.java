@@ -9,10 +9,10 @@ import java.util.Map;
 public class Probability {
 
     // The column index of the probability
-    public int column;
+    private int column;
 
     // The row index of the probability
-    public int row;
+    private int row;
 
     // The map containing symbol probabilities associated with their occurrences
     public Map<String, Integer> symbolProbabilities;

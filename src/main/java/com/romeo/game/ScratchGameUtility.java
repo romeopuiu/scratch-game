@@ -1,6 +1,10 @@
 package com.romeo.game;
 
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class ScratchGameUtility {
 
@@ -25,7 +29,7 @@ public class ScratchGameUtility {
                 double winReward = (reward * symbols.get(symbol).rewardMultiplier);
                 reward = (int) winReward;
             } else if (symbol.equalsIgnoreCase("+1000") || symbol.equalsIgnoreCase("+500")) {
-                double winReward = reward + symbols.get(symbol).extra;
+                double winReward = reward + symbols.get(symbol).getExtra();
                 reward = (int) winReward;
             }
         }

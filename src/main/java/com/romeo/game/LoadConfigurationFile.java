@@ -72,9 +72,9 @@ public class LoadConfigurationFile {
 
             Symbol symbol = new Symbol();
             symbol.rewardMultiplier = getConfigDouble(symbolData, "reward_multiplier", 0.0);
-            symbol.type = (String) symbolData.get("type");
-            symbol.extra = getConfigInteger(symbolData, "extra", 0);
-            symbol.impact = (String) symbolData.get("impact");
+            symbol.setType((String) symbolData.get("type"));
+            symbol.setExtra(getConfigInteger(symbolData, "extra", 0));
+            symbol.setImpact((String) symbolData.get("impact"));
 
             ScratchGameUtility.symbols.put(symbolName, symbol);
         }
@@ -102,8 +102,8 @@ public class LoadConfigurationFile {
         var standardSymbolProbabilitiesArray = (JSONArray) probabilityConfig.get("standard_symbols");
         for (Object obj : standardSymbolProbabilitiesArray) {
             JSONObject probabilityData = (JSONObject) obj;
-            int column = ((Long) probabilityData.get("column")).intValue();
-            int row = ((Long) probabilityData.get("row")).intValue();
+            var column = ((Long) probabilityData.get("column")).intValue();
+            var row = ((Long) probabilityData.get("row")).intValue();
             Map<String, Integer> symbolProbabilities = getSymbolProbabilities(
                     (JSONObject) probabilityData.get("symbols"));
             ScratchGameUtility.standardSymbolProbabilities.add(new Probability(column, row, symbolProbabilities));
@@ -159,7 +159,6 @@ public class LoadConfigurationFile {
             JSONObject winCombinationData = (JSONObject) winCombinationsConfig.get(winCombinationName);
             WinCombination winCombination = new WinCombination();
             winCombination.rewardMultiplier = getConfigDouble(winCombinationData, "reward_multiplier", 0.0);
-            ///winCombination.count = ((Long) winCombinationData.get("count")).intValue();
             Long countValue = (Long) winCombinationData.get("count");
 
             if (countValue != null) {
